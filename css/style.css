@@ -1,0 +1,502 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0d89fd;
+  --heading-color: #222;
+  --text-color: #505050;
+  --btn-background: linear-gradient(120deg, #3189fc 0%, #20b9ff 100%);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ------------------------------ */
+/* ------- REUSABLE CSS --------- */
+/* ------------------------------ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+h2 {
+  color: var(--heading-color);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ------------------------------ */
+/* ---------- HEADER ------------ */
+/* ------------------------------ */
+
+nav {
+  min-height: 130px;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--heading-color);
+}
+
+.nav-link-active {
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.nav-btn {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Menu */
+
+.menu-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* ------------------------------ */
+/* ------- SECTION INFO --------- */
+/* ------------------------------ */
+
+.section-info {
+  padding: 90px 0;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 48px;
+  row-gap: 110px;
+}
+
+.info-textbox h2 {
+  margin-bottom: 24px;
+}
+
+.info-textbox p {
+  margin-bottom: 30px;
+}
+
+.btn-info {
+  background-image: var(--btn-background);
+  color: #fff;
+}
+
+.btn-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-img {
+  width: 90%;
+}
+
+/* ------------------------------ */
+/* ------ SECTION SERVICES ------ */
+/* ------------------------------ */
+
+.section-services {
+  padding-bottom: 20px;
+}
+
+.services-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services-head p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.services {
+  padding: 90px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.service-box img {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.service-box p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ------------------------------ */
+/* ------ SECTION PRICING ------- */
+/* ------------------------------ */
+
+.section-pricing {
+  background-color: var(--primary-color);
+  padding: 70px 0 80px;
+}
+
+.pricing-heading {
+  color: #fff;
+  text-align: center;
+}
+
+.pricing-tables {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.pricing-table {
+  background-color: #fff;
+  padding: 44px 40px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.pricing-table-popular {
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-table-popular::after {
+  content: "BEST PLAN";
+  position: absolute;
+  top: 6%;
+  right: -20%;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #00a944;
+  padding: 6px 80px;
+  transform: rotate(45deg);
+}
+
+.pricing-table:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-table h3 {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pricing-table p {
+  color: #888;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.pricing-table ul {
+  list-style-type: none;
+  margin-bottom: 24px;
+}
+
+.pricing-table ul li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.pricing-table h4 {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.pricing-table h4 span {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.pricing-table small {
+  display: block;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.pricing-btn {
+  padding: 10px 24px;
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.pricing-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.pricing-btn-active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ------------------------------ */
+/* ---- SECTION TESTIMONIALS ---- */
+/* ------------------------------ */
+
+.section-testimonials {
+  padding: 100px 0 120px;
+}
+
+.testimonials {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials-head {
+  text-align: center;
+}
+
+.testimonials-head h2 {
+  margin-bottom: 20px;
+}
+
+.testimonials-head p {
+  max-width: 900px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.testimonials-list {
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.testimonials-box {
+  padding: 40px;
+  background-color: #f1f1f1;
+}
+
+.testimonials-box p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.testimonial-writer {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.testimonial-writer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.testimonial-writer h5 {
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.testimonial-writer small {
+  display: block;
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ------------------------------ */
+/* -------- SECTION CTA --------- */
+/* ------------------------------ */
+
+.section-cta {
+  padding: 60px 0;
+  background-image: url("../img/footer-bg.svg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.cta-textbox h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.cta-textbox p {
+  color: #fff;
+}
+
+.cta-buttonbox {
+  justify-self: center;
+}
+
+.cta-btn {
+  background-color: var(--primary-color);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 18px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------ */
+/* ----------- FOOTER ----------- */
+/* ------------------------------ */
+
+footer {
+  padding: 100px 0 90px;
+}
+
+.footer-box {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+  gap: 48px;
+}
+
+.footer-logo {
+  width: 120px;
+  cursor: pointer;
+}
+
+.footer-logobox p {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-navbox h3,
+.footer-social-icons h3 {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.footer-navbox ul {
+  list-style-type: none;
+}
+
+.footer-navbox ul li {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.footer-navbox ul li:hover {
+  color: #000;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
